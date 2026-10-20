@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b5d46">
+  <title>رفيق المسلم</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7f2;
+      color: #19382e;
+    }
+    header {
+      background: #0b5d46;
+      color: white;
+      padding: 28px 18px;
+      text-align: center;
+      border-radius: 0 0 24px 24px;
+    }
+    header h1 { margin: 0 0 8px; }
+    header p { margin: 0; }
+    main {
+      max-width: 650px;
+      margin: auto;
+      padding: 18px;
+    }
+    .card {
+      background: white;
+      padding: 18px;
+      margin-bottom: 14px;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px #0000000a;
+    }
+    .card h2 { margin-top: 0; }
+    button {
+      background: #0b5d46;
+      color: white;
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    #message {
+      line-height: 1.9;
+      white-space: pre-line;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #60766c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>رفيق المسلم 🌙</h1>
+    <p>خطوة صغيرة تقرّبك من الخير كل يوم</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>السلام عليكم ورحمة الله وبركاته</h2>
+      <p>أهلًا بك في رفيق المسلم، مساحة بسيطة للقرآن والذكر والتعلّم.</p>
+    </section>
+
+    <section class="card">
+      <h2>ماذا تريد أن تفعل؟</h2>
+      <div class="links">
+        <button onclick="showSection('quran')">القرآن الكريم</button>
+        <button onclick="showSection('adhkar')">الأذكار</button>
+        <button onclick="showSection('prayer')">الصلاة والقبلة</button>
+        <button onclick="showSection('plan')">وردي اليومي</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 id="title">ابدأ رحلتك</h2>
+      <p id="message">اختر أحد الأقسام بالأعلى.</p>
+    </section>
+  </main>
+
+  <footer>رفيق المسلم — نسأل الله النفع والقبول</footer>
+
+  <script>
+    function showSection(section) {
+      const title = document.getElementById('title');
+      const message = document.getElementById('message');
+
+      const sections = {
+        quran: [
+          'القرآن الكريم',
+          'يمكنك لاحقًا قراءة المصحف والبحث عن الآيات والاستماع للتلاوات من مصدر موثوق.'
+        ],
+        adhkar: [
+          'الأذكار',
+          'سبحان الله، والحمد لله، ولا إله إلا الله، والله أكبر.'
+        ],
+        prayer: [
+          'الصلاة والقبلة',
+          'ستُضاف مواقيت الصلاة واتجاه القبلة بعد ربط التطبيق بمصادر مناسبة.'
+        ],
+        plan: [
+          'وردي اليومي',
+          'اجعل لك هدفًا بسيطًا اليوم، مثل قراءة صفحة من القرآن الكريم.'
+        ]
+      };
+
+      title.textContent = sections[section][0];
+      message.textContent = sections[section][1];
+    }
+  </script>
+</body>
+</html>
